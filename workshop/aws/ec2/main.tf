@@ -194,7 +194,7 @@ locals {
     jdk               = var.splunk_jdk
     otel_demo         = var.otel_demo
     wsversion         = var.wsversion
-    instance_password = random_string.password.result
+    instance_password = "SplunkO11y!"
   }
 }
 
@@ -207,7 +207,7 @@ resource "aws_instance" "observability-instance" {
 
   user_data = templatefile("${path.module}/templates/userdata.yaml", merge(local.template_vars,
     {
-      instance_name = "${lower(var.slug)}-${count.index + 1}"
+      instance_name = "${lower(var.slug)}"
   }))
 
   root_block_device {
