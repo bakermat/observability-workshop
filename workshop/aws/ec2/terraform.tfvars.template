@@ -1,9 +1,9 @@
 # Required
-aws_region = ""
-aws_instance_count = ""
-slug = ""
-splunk_access_token = ""
-splunk_realm = ""
+aws_region = "eu0"
+aws_instance_count = "1"
+slug = "selfservicedemo"
+splunk_access_token = "x"
+splunk_realm = "x"
 
 # Required if splunk_presetup is true, optional otherwise. See variables.tf and README.md
 splunk_rum_token = ""
