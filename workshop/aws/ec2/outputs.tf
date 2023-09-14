@@ -10,10 +10,6 @@ output "instance_names" {
 #  value = aws_subnet.o11y_ws_subnets.*.id
 #}
 
-output "instance_password" {
-  value = random_string.password.result
-}
-
 output "login_details" {
   value = formatlist(
     "%s, %s, %s",

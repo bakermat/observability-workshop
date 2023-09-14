@@ -191,7 +191,7 @@ runcmd:
   # Download Workshop
   - export WSVERSION=${wsversion}
   - 'export WSARCHIVE=$([ "$WSVERSION" = "main" ] && echo "main" || echo "v$WSVERSION")'
-  - curl -s -OL https://github.com/bakermat/observability-workshop/archive/$WSARCHIVE.zip
+  - curl -s -OL https://github.com/splunk/observability-workshop/archive/$WSARCHIVE.zip
   - unzip -qq $WSARCHIVE.zip -d /home/ubuntu/
   - mkdir /home/ubuntu/workshop
   - mv /home/ubuntu/observability-workshop-$WSVERSION/workshop/* /home/ubuntu/workshop
