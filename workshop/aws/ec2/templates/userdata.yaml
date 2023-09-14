@@ -152,7 +152,7 @@ write_files:
       export REALM=${realm}
       export ACCESS_TOKEN=${access_token}
       export HEC_TOKEN=${hec_token}
-      export HEC_URL=${hec_url}
+      export HEC_URL=${hec_url}bas
       export INSTANCE="${instance_name}"
       if [ ! -f /home/ubuntu/.helmok ]; then
         helm repo add splunk-otel-collector-chart https://signalfx.github.io/splunk-otel-collector-chart
@@ -200,6 +200,9 @@ runcmd:
   - rm -rf /home/ubuntu/workshop/aws /home/ubuntu/workshop/cloud-init /home/ubuntu/workshop/gcp /home/ubuntu/workshop/ansible
   # Set apm-config.sh executable
   - chmod +x /home/ubuntu/workshop/apm/apm-config.sh
+  # Prep K8s deployment.yaml
+  - bash /home/ubuntu/workshop/apm/apm-config.sh -r
+  - sudo kubectl apply -f deployment.yaml
   # Download Splunk Observability Content Contrib Repo
   - curl -s -L https://github.com/splunk/observability-content-contrib/archive/main.zip -o content-contrib.zip
   - unzip -qq content-contrib.zip -d /home/ubuntu/
